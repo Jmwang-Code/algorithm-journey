@@ -92,7 +92,7 @@ public class BinarySystem {
 		System.out.println("test4测试开始");
 		boolean test4 = returnFalse() && returnTrue();
 		System.out.println("test4结果，" + test4);
-		System.out.println("===|、&、||、&&===");
+		System.out.println("===|、&、||、&&   区别就是穿透性的差距，如果一开始是false OR true===");
 		// <<
 		int i = 0b0011010;
 		printBinary(i);
