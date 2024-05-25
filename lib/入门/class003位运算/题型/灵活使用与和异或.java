@@ -54,4 +54,17 @@ public class 灵活使用与和异或 {
             return new int[]{a, b};
         }
     }
+
+    static class leetcode461{
+        public int hammingDistance(int x, int y) {
+            int k = x ^ y;
+            int count = 0;
+            for(int i = 30;i>=0;i--){
+                if(((k >> i) & 1) == 1){
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
 }
