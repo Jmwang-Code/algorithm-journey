@@ -4,11 +4,6 @@ import static 入门.class003位运算.题型.灵活使用与和异或.Leetcode1
 
 public class 灵活使用与和异或 {
 
-    public static void main(String[] args) {
-        int[] arr = {2, 2, 3, 2};
-        System.out.println(singleNumber(arr));
-    }
-
     static class Leetcode136 {
         public static int singleNumber(int[] nums) {
             int ans = 0;
@@ -118,5 +113,51 @@ public class 灵活使用与和异或 {
             n |= n >>> 16;
             return n ^ num;
         }
+    }
+
+    static class leetcode762{
+        public static int countPrimeSetBits(int left, int right) {
+            int count = 0;
+            for(int i = left;i<=right;i++){
+                int k = 0;
+                for(int j = 0;j<= 31;j++){
+                    if((((i >> j) & 1)==1)){
+                        k++;
+                    }
+                }
+                if (isZhiShu(k) && k>1){
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        public static boolean isZhiShu(int k){
+            for(int i=2;i<k;i++){
+                if(k%i==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static int countPrimeSetBits2(int left, int right) {
+            int count = 0;
+            for(int i = left;i<=right;i++){
+                int k = Integer.bitCount(i);
+                if (isZhiShu(k) && k>1){
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int i = leetcode762.countPrimeSetBits(842, 888);
+        System.out.println(i);
     }
 }
