@@ -156,8 +156,25 @@ public class 灵活使用与和异或 {
 
     }
 
+    static class leetcode693{
+        //10101
+        //^
+        //1010
+
+        //11111
+
+        //100000
+        //&
+        //011111
+        public static boolean hasAlternatingBits(int n) {
+            int a = n ^ (n >> 1);
+            return (a & (a + 1)) == 0;
+        }
+    }
+
+
     public static void main(String[] args) {
-        int i = leetcode762.countPrimeSetBits(842, 888);
-        System.out.println(i);
+        boolean b = leetcode693.hasAlternatingBits(5);
+        System.out.println(b);
     }
 }
