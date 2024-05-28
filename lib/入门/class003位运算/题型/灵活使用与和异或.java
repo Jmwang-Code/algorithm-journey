@@ -172,9 +172,24 @@ public class 灵活使用与和异或 {
         }
     }
 
+    static class leetcode868{
+        public static int binaryGap(int n) {
+            int last = -1, ans = 0;
+            for (int i = 0; n != 0; ++i) {
+                if ((n & 1) == 1) {
+                    if (last != -1) {
+                        ans = Math.max(ans, i - last);
+                    }
+                    last = i;
+                }
+                n >>= 1;
+            }
+            return ans;
+        }
+    }
 
     public static void main(String[] args) {
-        boolean b = leetcode693.hasAlternatingBits(5);
-        System.out.println(b);
+        leetcode868.binaryGap(22);
+        leetcode868.binaryGap(21);
     }
 }
